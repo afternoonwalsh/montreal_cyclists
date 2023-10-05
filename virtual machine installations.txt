@@ -1,0 +1,39 @@
+# Install Python and pip 
+sudo apt-get install update
+
+sudo apt-get install python3-distutils
+
+sudo apt-get install python3-apt
+
+sudo apt-get install wget
+
+wget https://bootstrap.pypa.io/get-pip.py
+
+sudo python3 get-pip.py
+
+
+# Install Mage
+sudo pip3 install mage-ai
+
+# Install Pandas
+sudo pip3 install pandas
+
+# Install Google Cloud Library
+sudo pip3 install google-cloud
+
+sudo pip3 install google-cloud-bigquery
+
+# Other
+sudo pip3 datetime
+sudo pip3 unidecode
+sudo pip3 time
+
+# If you see the "too many open files" error in Mage:
+# 1) View the current running processes
+sudo netstat -ltnp
+
+# 2) Kill the Python ones
+pkill python3
+
+# 3) Restart Mage
+mage start [name of google cloud virtual machine instance]
