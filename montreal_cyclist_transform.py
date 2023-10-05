@@ -54,10 +54,8 @@ def transform(sensor_df, passage_df, weather_df, *args, **kwargs):
     date_df['month_num'] = date_df['timestamp'].dt.month
     date_df['month_label'] = date_df['month_num'].apply(format_with_leading_zeros) + ' - ' + date_df['month']
     date_df['month_label']
-    #date_df['month_label'] = date_df['month_num'].astype(str) + ' - ' + date_df['month']
     date_df['quarter'] = date_df['timestamp'].dt.quarter
     date_df['year'] = date_df['timestamp'].dt.year
-    date_df.head()
     
     # Passage
     passage_df.rename(columns={
@@ -75,12 +73,10 @@ def transform(sensor_df, passage_df, weather_df, *args, **kwargs):
 
     # Sensor
     sensor_df = sensor_df[sensor_df['Statut']=='Actif']
-    sensor_df = sensor_df[sensor_df['Nom']!='REV St Denis/Castelnau NB'] # Fix duplicate record
+    sensor_df = sensor_df[sensor_df['Nom']!='REV St Denis/Castelnau NB'] # Fixes duplicate record
     sensor_df['name'] = sensor_df['Nom'].apply(unidecode)
     sensor_df['sensor_id'] = sensor_df['ID'].astype(str)
     sensor_df.rename(columns={
-        #'ID':'sensor_id',
-        #'Nom':'name',
         'Statut':'status',
         'Latitude':'latitude',
         'Longitude':'longitude'
@@ -101,11 +97,8 @@ def transform(sensor_df, passage_df, weather_df, *args, **kwargs):
         'Mean Temp (Â°C)':'mean_temp',
         'Max Temp (Â°C)':'max_temp',
         'Total Rain (mm)':'total_rain',
-        #'Total Rain Flag':'total_rain_flag',
         'Total Precip (mm)':'total_precip',
-        'Total Precip Flag':'total_precip_flag',
-        #'Snow on Grnd (cm)':'snow_on_ground',
-        #'Snow on Grnd Flag':'snow_on_ground_flag',
+        'Total Precip Flag':'total_precip_flag'
     },inplace=True)
     # Temp bands
     bin_edges = [-30, -25, -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30]  # Bins of width 5

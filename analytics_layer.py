@@ -95,7 +95,6 @@ def transform(dataframe_list, *args, **kwargs):
             return row['passage_count_change']/row[metric]
 
 
-    #new_weather_columns = analytics_df.apply(generate_last_week_comparison, axis=1)
     new_weather_columns = analytics_df.apply(generate_last_week_comparison, axis=1)
     analytics_df = pd.concat([analytics_df, new_weather_columns], axis=1)
 
