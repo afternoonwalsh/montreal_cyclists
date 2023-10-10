@@ -18,9 +18,6 @@ The following are the files contained in this repository:
  - montreal_cyclists.drawio (Data model diagram)
  - virtual machine installations.txt (Commands to use in the Google VM instance)
 
-For more information on this project, please check out the following Medium article:
+For more information on this project, please check out the following Medium article: https://medium.com/@patrick.ml.walsh/mage-bigquery-and-bundled-up-bike-trips-672c041f808a
 
-For questions about this project and its Mage AI, BigQuery, Python, or Power BI components, feel free to reach out at patrick.ml.walsh@gmail.com
-
-
-With questions or suggestions, feel free to email me at patrick.ml.walsh@gmail.com. Thanks!
+For questions or ideas on this project and its Mage AI, Google Cloud, Python, or Power BI components, feel free to reach out at patrick.ml.walsh@gmail.com. Thanks!
